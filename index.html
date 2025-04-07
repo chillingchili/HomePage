@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class=" bg-slate-950">
+
+    <div class="flex flex-col justify-center items-center ">
+        <h1 class="text-7xl font-mono text-stone-200 mt-70" id="time">Something is Wrong</h1>
+
+
+        <!-- <h1 class="text 9xl font-mono text-stone-200 mt-9 transition-opacity duration-500">Welcome</h1> -->
+    </div>
+
+
+
+
+    <script>
+        //time script
+        setInterval(shtime, 1000);
+
+        function shtime() {
+            let time = new Date();
+            let s = time.getSeconds();
+            let m = time.getMinutes();
+            let h = time.getHours();
+
+            if (s < 10) {
+                s = "0" + s;
+            }
+
+            let currentTime = h + ":" + m + ":" + s;
+            document.getElementById("time").innerHTML = currentTime;
+        }
+        shtime();
+
+        setInterval(wlcmMsg, 5000);
+
+        function wlcmMsg() {
+            const msg = document.getElementById("msg");
+
+            msg.classList.add("opacity-100");
+        }
+
+        wlcmMsg();
+    </script>
+</body>
+
+</html>
